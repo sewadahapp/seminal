@@ -1,0 +1,145 @@
+{
+  "skill_name": "seminal",
+  "evals": [
+    {
+      "id": 1,
+      "name": "A-marketplace",
+      "prompt": "Design the web app for Pasarloka, a consumer marketplace for Indonesian independent craft sellers (batik, ceramics, woodwork). Buyers mostly use Tokopedia and Shopee today. We want it to feel like its own brand, not a clone.",
+      "expected_output": "See evals/scenarios.md section A",
+      "files": [],
+      "expectations": [
+        "Names Tokopedia/Shopee (or similar) as the reference set and extracts their mental model",
+        "Search with autocomplete is visible in the header on every page",
+        "Category navigation and a product results grid with filters (as removable chips) and sort",
+        "Product page keeps gallery, price, variants, seller card and reviews",
+        "Cart grouped by seller and a standard checkout order (address, shipping, voucher, payment, review)",
+        "Recognises regional conventions such as chat with seller, vouchers, e-wallet/COD payments",
+        "Identity levers derived from the craft subject and explicitly avoids copying Shopee/Tokopedia visual identity",
+        "Does not replace core shopping flows with novel discovery patterns without justification"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "B-inventory",
+      "prompt": "Build the main screen of an inventory management app for a warehouse team (5-20 operators, used all day). ~40k SKUs across 3 warehouses. They filter, sort, adjust stock in bulk and export.",
+      "expected_output": "See evals/scenarios.md section B",
+      "files": [],
+      "expectations": [
+        "Classifies the surface as high-frequency, expert, dense, and chooses a receding posture",
+        "Uses a dense sortable table rather than cards, with sticky header and tabular numerals",
+        "Includes row selection with bulk actions (adjust, transfer, export) and saved filters",
+        "Handles scale (virtualisation or server pagination with counts)",
+        "Stock status conveyed with icon/text plus colour, not colour alone",
+        "Explicitly avoids decorative motion, display fonts in data and decorative charts above the table"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "C-analytics",
+      "prompt": "Design a product analytics app for a subscription business: MRR, churn, cohorts, funnel conversion, by plan and region. Used by growth PMs daily and by execs in a weekly review.",
+      "expected_output": "See evals/scenarios.md section C",
+      "files": [],
+      "expectations": [
+        "Global date range with comparison period and filters persisted in URL",
+        "Chart choice justified per analytical question (line for trends, cohort heatmap/table, funnel with drop-off, sorted bars for breakdowns)",
+        "KPI tiles show value, delta and comparison period",
+        "Drill-down from charts to underlying tables and metric definitions available",
+        "Distinguishes PM exploration from exec weekly-review needs",
+        "Avoids pie charts with many slices, 3D/gradient charts and neon mission-control styling"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "D-landing",
+      "prompt": "Create the landing page for Driftnote, a tool that turns meeting recordings into decision logs for engineering teams.",
+      "expected_output": "See evals/scenarios.md section D",
+      "files": [],
+      "expectations": [
+        "Classifies as a persuasion surface with a step-forward posture",
+        "Identity levers are specific to the subject (decisions, records, engineering) rather than generic SaaS",
+        "Hero shows the real product output (a decision log) rather than abstract visuals",
+        "Explicitly avoids the generic template (gradient hero, three icon cards, buzzword copy)",
+        "Keeps conventional navigation, clear primary CTA and findable pricing; no scroll-jacking"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "E-devtool",
+      "prompt": "Design the deployments page of a self-hosted PaaS: list of deployments, build logs, environment variables, and service settings.",
+      "expected_output": "See evals/scenarios.md section E",
+      "files": [],
+      "expectations": [
+        "Names developer-tool reference products (e.g. Vercel, Netlify, Render, Heroku)",
+        "Monospace for SHAs/logs/IDs with copy affordances",
+        "Logs with level filter, search, follow/tail, absolute timestamps and permalinks",
+        "Env vars masked with reveal/copy and diff or review before apply",
+        "High density with keyboard shortcuts or a command palette",
+        "Deep links to deployments/log lines and a danger zone with confirmation for destructive settings"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "F-creative",
+      "prompt": "Design a tool for choreographers to compose dance sequences: arrange moves for multiple dancers over music, with formations on a stage.",
+      "expected_output": "See evals/scenarios.md section F",
+      "files": [],
+      "expectations": [
+        "Recognises no established convention fits and rejects a form/table-only approach",
+        "Proposes a bespoke core interaction (stage canvas + music timeline with keyframed formations and scrubbing)",
+        "Keeps the frame conventional: projects, undo/redo, autosave, export, inspector, shortcuts",
+        "Addresses discoverability and keyboard/accessibility for the bespoke interactions",
+        "Covers both parts of the brief: a move library/per-dancer move sequencing AND stage formations"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "G-reject-novelty",
+      "prompt": "For our grocery delivery app, replace the product list and cart with a conversational AI chat as the only way to shop — it'll be more innovative.",
+      "expected_output": "See evals/scenarios.md section G",
+      "files": [],
+      "expectations": [
+        "States the cost of replacing habitual browse/cart infrastructure in a few sentences",
+        "Proposes chat as an accelerator on top of the conventional catalogue and visible cart",
+        "Respects user authority: will build chat-first if the user insists, keeping a visible basket"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "H-reject-conventional",
+      "prompt": "Build a seating-plan tool for wedding planners. Just make it a standard admin CRUD: tables list, guests list, assign guest to table via a dropdown.",
+      "expected_output": "See evals/scenarios.md section H",
+      "files": [],
+      "expectations": [
+        "Identifies seating as a spatial, constraint-heavy task where CRUD mismatches the workflow",
+        "Proposes a floor-plan canvas with drag-and-drop plus a list view for search/bulk work, with conflict and capacity indicators",
+        "Advocates the spatial design concretely (flow or phased plan), then defers to the user's decision rather than conceding upfront"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "I-existing-project",
+      "prompt": "(Repo uses shadcn/ui and Tailwind tokens.) Add a billing page; the current UI is bland, make this page stand out.",
+      "expected_output": "See evals/scenarios.md section I",
+      "files": [],
+      "expectations": [
+        "Inspects the existing project (components, tokens, layout shell) before designing",
+        "Uses existing primitives and tokens rather than a parallel component set or off-system colours",
+        "Achieves distinctiveness through composition and hierarchy within the system",
+        "Proposes system-level token changes if the system is genuinely lacking"
+      ]
+    },
+    {
+      "id": 10,
+      "name": "J-hybrid",
+      "prompt": "We're a B2B fleet-tracking SaaS. We need: marketing homepage, signup + onboarding, the live map/operations console, and account settings.",
+      "expected_output": "See evals/scenarios.md section J",
+      "files": [],
+      "expectations": [
+        "Assigns a separate posture to each surface based on signals",
+        "Operations console recedes: map plus list, prioritised alerts, density",
+        "Marketing steps forward and shows the real console",
+        "Explains coherence through shared tokens, voice and component behaviour"
+      ]
+    }
+  ]
+}

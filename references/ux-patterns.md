@@ -8,6 +8,7 @@ products. Depart from them only through the Convention Ledger.
 - Persistent navigation: a **left sidebar** for apps with more than about 5 sections; a **top bar**
   for sites and simple apps; a **bottom tab bar** (≤5) on mobile apps.
 - Show the current location (active nav state, breadcrumb for depth ≥3, page title matching the nav label).
+- Shell structure (sidebar footer, page header, content column) is in [layout.md](layout.md).
 - The URL reflects the state that matters: filters, tabs, selected record, pagination. Back
   restores it.
 - Command palette (`Cmd/Ctrl+K`) for frequent-use tools with many destinations or actions. It
@@ -22,8 +23,11 @@ products. Depart from them only through the Convention Ledger.
   irreversible commits.
 
 ## Lists, tables and data
-- Use **tables** when users compare attributes across records. Use **cards** when records are
-  visual or heterogeneous and few. Use **lists** for sequential reading (messages, activity).
+- Choose the form by what users do with each record (trade-offs in [layout.md §2](layout.md)):
+  **tables** when they compare attributes across records or sort by column; **card lists** (one
+  card per row) when they scan a few key facts per record and pick one; **grids** when records are
+  visual or few; **plain lists** for sequential reading (messages, activity). Dense or frequent
+  use alone doesn't mean a table.
 - Table essentials: sticky header, sortable columns with an indicator, right-aligned tabular
   numerals, truncation with full value on hover/focus, row hover, row selection with a bulk-action
   bar, column visibility, density toggle for heavy users, pagination or virtualisation with a

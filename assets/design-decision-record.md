@@ -1,8 +1,9 @@
 # Design Decision Record — <product / surface>
 
 > Fill this in before building a new product or surface. Keep it short: bullets, not essays.
-> Save it next to the code (e.g. `docs/design/<surface>.md` or in `DESIGN.md`) if the project
-> keeps design docs.
+> **Show it:** post a short summary (posture, references, key calls, options chosen) in the chat
+> before building. Also save it next to the code (e.g. `docs/design/<surface>.md` or in
+> `DESIGN.md`) if the project keeps design docs.
 
 ## 1. Product and users
 - **Purpose:** <what the product/surface is for, one sentence>
@@ -14,9 +15,10 @@
 - **Stack / components / tokens:** <…>
 - **Patterns to preserve:** <…>
 
-## 3. Reference set and mental model
+## 3. Reference sets
 - **Users arrive from:** <2–5 products>
 - **Mental model:** <the flow/structure they expect>
+- **Owner likes (look and feel):** <1–3 products/screens the owner pointed at, or "none given: options offered in §8b">
 
 ## 4. Surfaces and posture
 | Surface | Job | Signals (freq · stakes · expertise · intent · density) | Posture |
@@ -38,6 +40,11 @@
 ## 8. Key UX states and flows
 - **Top 3 flows (steps):** <…>
 - **States designed:** empty (first use / no results) · loading · error · partial/stale · success · no permission · <domain-specific, e.g. payment pending>
+
+## 8b. Options checkpoint (when more than one pattern fits)
+| Decision | Options shown (named after a known pattern) | Recommended | Owner chose |
+|---|---|---|---|
+| e.g. collection view | table (Drive) · card per row (flight results) · grid (gallery) | card per row | |
 
 ## 9. Identity check
 - **Swap / clone / default tests:** <one line each; bar scaled to posture>

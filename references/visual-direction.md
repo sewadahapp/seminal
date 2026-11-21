@@ -12,7 +12,7 @@ Choose **2–4 levers** to carry the identity and keep the rest quiet.
 |---|---|---|
 | Typography | Display face with character, large scale contrast, type as image | One well-tuned family (or sans + mono), tight scale (≈1.125–1.2), tabular numerals |
 | Colour | Committed brand colour, bold grounds, art-directed palettes | Neutral surfaces, one accent reserved for action/selection, semantic state colours |
-| Composition | Asymmetry, editorial grids, scale shifts, narrative pacing | Predictable grid, alignment, consistent panel structure |
+| Composition | Asymmetry, editorial grids, scale shifts, narrative pacing | Predictable grid, alignment, consistent panel structure (see [layout.md](layout.md)) |
 | Imagery | Art-directed photography, illustration system, the real product | Data and user content are the imagery; illustration only in empty/onboarding states |
 | Component shape | Distinct radius logic, signature buttons/cards | Consistent, crisp, minimal ornament; hierarchy via weight and spacing |
 | Voice | Point-of-view copy, headlines that say something specific | Precise, short, consistent verbs; the voice is clarity |
@@ -78,3 +78,9 @@ When the reference product is well known (Amazon, Tokopedia, Shopee, Linear, Str
   semantics.
 - **No:** their exact palette, logo-adjacent marks, signature illustrations, proprietary type,
   distinctive layout signatures, or copy. A screenshot must not be mistaken for theirs (Clone test).
+
+**The owner's own references are different.** When the owner points at a screen they like ("a
+footer like this dashboard template", "centred like Claude's artifact list"), that is the brief
+for composition and feel. Aim at it: column width, alignment, structure, density, mood. Still
+express the product's own brand (type, colour, voice), so the result passes the Clone test. If the
+reference is the owner's own design system or template, matching it closely is the point.

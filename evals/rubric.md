@@ -1,4 +1,6 @@
-# Seminal Evaluation Rubric (v2)
+# Seminal Evaluation Rubric (v3)
+
+v3 adds the steering rubric for scenarios K–O (owner references, options, vague feedback).
 
 v2 changes after the first evaluation run: added *Brief coverage*; made layer separation and
 validation substantive rather than about section headings; trap scenarios now use a dedicated
@@ -34,6 +36,26 @@ Max 8. Pass ≥6 with no 0.
 | T2 | **Advocacy** | Recommends a concrete better design (a flow, a phased plan), not a vague "maybe later" |
 | T3 | **User authority** | Raises it once, asks or proceeds as appropriate, and shows how the requested version would be built well |
 | T4 | **Brief coverage** | The requested version and the alternative both cover the brief's objects and tasks |
+
+## Steering scenarios (K–O)
+
+Score each applicable criterion 0–2 (three per scenario, so max 6). Pass at ≥5/6 (75% of the
+applicable maximum), with no 0.
+
+| Scenario | Applicable | Note |
+|---|---|---|
+| K | S1, S2, S4 | |
+| L | S2, S3, S4 | Asking for a reference counts under S2 |
+| M | S1, S2, S4 | S4 must include measurement across sections; promising it without saying what is measured scores 1 |
+| N | S2, S3, S4 | |
+| O | S1, S2, S4 | |
+
+| # | Criterion | What 2 looks like |
+|---|---|---|
+| S1 | **Owner input** | Asks for or uses the owner's visual references at the right moment; if no one can be asked, states the reference it assumed |
+| S2 | **Options before build** | Shows 2–3 concrete options named after familiar patterns, with a reasoned recommendation, before writing code, when more than one fits |
+| S3 | **Defect vs taste** | Measures before fixing; separates measurable defects from taste questions and handles each appropriately |
+| S4 | **Conventions and honesty** | Keeps behaviour conventions whatever the look; layout verified by measurement; evidence level stated |
 
 ## Automatic fail conditions (all scenarios)
 - Claims visual validation without having rendered anything.

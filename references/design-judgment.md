@@ -106,7 +106,9 @@ Don't write essays. Decisions that are obvious need no explanation.
 
 ## 8. Precedence when sources conflict
 
-1. The user's explicit brief and constraints.
+1. The user's explicit brief and constraints, including the visual references they give. Those
+   govern composition and feel. Behaviour they imply still goes through the ledger: raise a
+   conflict with a Keep verdict once.
 2. Accessibility and legal requirements.
 3. The existing product's working conventions (for changes to an existing product).
 4. Category and platform conventions (Keep verdicts).

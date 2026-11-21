@@ -32,7 +32,8 @@ From the signals, write one or two sentences saying how far the interface should
 (get out of the way of the task) or **step forward** (express, guide, persuade). For example:
 
 > Workspace: high frequency, high expertise, high density, operate intent → recede. Compact
-> table-first layout, keyboard paths, restrained colour reserved for state, no decorative motion.
+> layout in the collection form the task needs (a table here, because operators compare stock
+> across columns), keyboard paths, restrained colour reserved for state, no decorative motion.
 > Identity through type, numerals and microcopy only.
 
 > Marketing site: rare, low stakes, persuade intent → step forward. Expressive type and
@@ -49,6 +50,16 @@ From the signals, write one or two sentences saying how far the interface should
 
 These are positions on a spectrum, not modes. Write the sentence that explains *why*; the word
 alone isn't enough.
+
+**Posture is not a layout.** "Recede" says how loud the interface is, not which components to use.
+A card list, a centred column or a spacious page can recede just as a dense table can. Choose the
+layout from what users do with the content ([layout.md](layout.md)) and from the owner's references.
+
+### When the owner's taste is a primary input
+Some products are also their own showcase: a design system's demo app, an open-source project's
+UI, a portfolio product, a tool the owner builds mainly for themselves. For these, the owner's
+references count as much as the signals above. Ask for them (SKILL.md step 3). Keep the conventions
+users rely on, but don't default to the most utilitarian form just because the signals say "recede".
 
 ## Common surface types (shorthand, not templates)
 
@@ -87,5 +98,7 @@ alone isn't enough.
 - Classifying by **industry** ("fintech → dark mode, gradients") instead of by surface and signals.
 - Treating the **whole product** as one posture (an expressive landing-page style leaking into the admin).
 - Assuming **B2B = boring** or **consumer = playful**. Read frequency, stakes and intent instead.
+- Reading "recede" as "table, left-aligned, dense", and building that without asking an owner who
+  has a picture in mind.
 - Ignoring **who** uses a surface: an internal ops tool used 8 hours a day by trained staff differs
   from the same data shown to customers once a month.

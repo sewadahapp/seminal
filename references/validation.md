@@ -1,7 +1,7 @@
 # Validation
 
 Workflow steps 9–10. Look at what you built, judge it against its purpose, fix real problems, and
-report honestly.
+report honestly. For layout-specific measurements, see [layout.md §6](layout.md).
 
 ## 1. Inspect (use what the environment offers)
 
@@ -63,7 +63,27 @@ Answer each question in a word or a sentence. "No" or "unsure" means a refinemen
   confusing button.
 - Don't do polish loops that only move pixels around once the real issues are fixed.
 
-## 4. Validating innovation bets with people
+## 4. Responding to vague feedback
+
+"Looks off", "hard to read", "doesn't feel right" and "not what I pictured" are real signals, but
+they don't say what to fix. Guessing and rebuilding costs a full loop. Instead:
+
+1. **Measure the rendered UI.** Screenshot it and measure the area in question: edges, widths,
+   spacing, alignment of repeated elements, contrast, type size. Without a browser, measure from
+   the code and say that's what you did. Many "looks off" reports are a
+   few pixels of misalignment or an inconsistent edge.
+2. **List 2–3 concrete hypotheses**, each tied to something visible. For example: "the footer text
+   doesn't share the nav's left edge", "the footer is a single text line where dashboards usually
+   have an account block", "the column is left-aligned, so wide screens look lopsided".
+3. **Sort them into defect or taste.** A defect (misalignment, low contrast, broken state) can be
+   fixed right away; say what you fixed. A taste question (structure, layout form, feel) needs the
+   owner: ask which product or screen they have in mind, or show 2–3 options (SKILL.md step 8).
+4. **Say which one you'll act on and why**, in a sentence, before changing code.
+
+Don't treat a taste signal as a bug, and don't polish the wrong thing in the meantime. Once the
+owner names a reference, it becomes the target (SKILL.md step 3).
+
+## 5. Validating innovation bets with people
 
 Inspection proves a bespoke interaction *works*. It doesn't prove users *prefer* it. For each
 innovation bet in the ledger, propose (don't fake) a check proportionate to its risk:
@@ -74,7 +94,7 @@ innovation bet in the ledger, propose (don't fake) a check proportionate to its 
   fallback built).
 - Monitoring after launch: usage of the bespoke path vs the fallback, error and abandonment rates.
 
-## 5. Report
+## 6. Report
 
 End with a short report:
 

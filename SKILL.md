@@ -3,7 +3,7 @@ name: seminal
 description: Context-aware interface design methodology. Decides what in a UI should stay familiar, what should be refined, what should carry brand identity, and what genuinely deserves a new interaction — before and while building. Use when designing, redesigning, building, or reviewing any user interface (landing pages, marketplaces, e-commerce, SaaS, dashboards, admin panels, analytics, developer tools, creative apps, mobile or desktop apps), when choosing between conventional and bespoke patterns, when a design feels generic or, conversely, needlessly strange, or when coordinating other design skills.
 license: MIT
 metadata:
-  version: "1.1.0"
+  version: "1.2.0"
   philosophy: "Design with judgment, not just taste."
 ---
 
@@ -53,14 +53,18 @@ per surface.
 | Small change in an existing UI | existing-projects, plus ux-patterns or visual-direction for the part you touch |
 | Plan or direction only (no code yet) | product-conventions (the relevant section), interface-classification, design-judgment |
 | New surface or product, built end to end | All step references, as each step comes up |
+| Redesign of an existing surface | existing-projects, layout, visual-direction, product-conventions (the relevant section) |
+| Page structure: content width, alignment, list vs cards vs table, app shell | layout |
 | Review or critique of an existing UI | validation, design-judgment, product-conventions (the relevant section) |
+| Vague feedback on something you built ("looks off", "hard to read") | validation (§4), layout |
 | A ledger call feels close | examples |
 
 ### 1. Understand the product and its users
 Establish: what the product is for, who uses it, how often, at what expertise level, and what is at
 stake when they get it wrong. If the brief is silent on this, infer it from the codebase, data
 model, copy and routes, state your assumptions explicitly, and ask only when a wrong guess would change
-the design's direction.
+the design's direction. On a redesign, the look and the layout *are* the direction, so asking
+about them is expected (step 3).
 
 ### 2. Inspect the existing project (skip only for an empty folder)
 Read before deciding: component library, tokens, theme, layout shell, routing, existing pages,
@@ -69,13 +73,31 @@ describes the stack and you can't see the code, plan against what they described
 would check, and confirm before building.
 → [references/existing-projects.md](references/existing-projects.md)
 
-### 3. Map expectations: the reference set
-Name the 2–5 products users most likely arrive from (e.g. an Indonesian marketplace: Tokopedia,
-Shopee; an issue tracker: Jira, Linear, GitHub Issues). From them, extract the **mental model**,
-not the visuals. Then list the conventions for this category. For internal tools, the reference set is
-often a spreadsheet, a legacy system or paper. Find out what users would lose by leaving it (bulk
-paste, free-form sorting, keyboard speed) and keep those.
-→ [references/product-conventions.md](references/product-conventions.md)
+### 3. Map expectations: two reference sets
+Two different inputs, from two different people. Collect both.
+
+- **Users arrive from** (how it should *work*). Name the 2–5 products users most likely know
+  (e.g. an Indonesian marketplace: Tokopedia, Shopee; an issue tracker: Jira, Linear, GitHub
+  Issues). Extract the **mental model**, not the visuals, and list the category's conventions.
+  For internal tools, the reference is often a spreadsheet, a legacy system or paper. Find out
+  what users would lose by leaving it (bulk paste, free-form sorting, keyboard speed) and keep those.
+- **Owner likes** (how it should *look and feel*). The person you're building for often has taste
+  in mind before they can name it. For a new surface or a redesign, ask for 1–3 products or
+  screens they like *for this surface*, or use any they've already given. A screenshot or named
+  screen is the target composition. Its behaviour still goes through the Convention Ledger.
+
+The owner will be in one of three situations. Handle each one:
+
+| Owner has… | Do this |
+|---|---|
+| Concrete references | Aim at them. Take the composition and feel, not the brand's skin (Clone test). |
+| Only a feeling ("clean", "calm", "like a real dashboard") | Turn it into 2–3 options, each named after a real pattern, and let them pick (step 8). |
+| Nothing ("you decide", "not sure") | Still offer 2–3 options with a recommendation. People recognise what they want faster than they describe it. |
+
+If no one is available to ask, choose, write down which reference you assumed, and offer the
+alternatives in the report.
+→ [references/product-conventions.md](references/product-conventions.md),
+[references/layout.md](references/layout.md)
 
 ### 4. Classify each surface
 One product has many surfaces (marketing site, onboarding, workspace, analytics, settings, admin).
@@ -110,10 +132,19 @@ Reuse the project's system if one exists. Otherwise, derive tokens from the iden
 surface posture: density, type scale, colour roles, surface treatment, motion budget.
 → [references/visual-direction.md](references/visual-direction.md)
 
-### 8. Implement
-Work in the project's own framework, components and conventions. Use real or realistic content
-(real product names, realistic numbers, long and short strings, empty datasets), not lorem ipsum
-in a perfect 3-row table.
+### 8. Checkpoint, then implement
+**Options before build.** When more than one pattern is genuinely valid *and* the choice changes
+what the page looks like (table vs card list vs grid, centred vs full-width column, sidebar footer
+structure), show the owner 2–3 low-fi options before writing code: a one-line description or a
+small ASCII sketch each, plus your recommendation and why. Then put the decisions that shaped the
+direction (posture, reference, key ledger calls, the options chosen) in the chat as a short
+summary, even if you also save a Design Decision Record. A record nobody reads steers nothing. For
+a small change with one obvious answer, skip the checkpoint. If the task runs without
+interruption, build your recommendation and list the other options as follow-ups.
+
+Then build. Work in the project's own framework, components and conventions. Use real or
+realistic content (real product names, realistic numbers, long and short strings, empty datasets),
+not lorem ipsum in a perfect 3-row table.
 
 ### 9. Inspect and validate
 Look at the rendered result. If browser tooling exists, screenshot the key states at mobile and
@@ -122,7 +153,10 @@ desktop widths, and exercise the core flow with keyboard and pointer. Then run t
 
 ### 10. Refine based on actual problems
 Fix what inspection found, in order of user impact. Don't do polish passes that only move pixels
-around. Then report what was verified, what was only reviewed in code, and what was not checked.
+around. When the owner's feedback is vague ("looks off", "hard to read"), don't fix the first thing
+you guess. Measure, list 2–3 hypotheses, and ask for a reference if it's taste rather than a
+defect (validation.md §4). Then report what was verified, what was only reviewed in code, and what
+was not checked.
 
 ## The Innovation Test
 
@@ -172,6 +206,13 @@ scroll).
   export, settings — conventional.
 - Data/analytics → chart choice follows the question being asked. Hierarchy follows the decision the
   user makes. Decoration competes with data.
+
+**Recede is not a layout.** Receding means the interface doesn't compete with the task. It doesn't
+mean tables, left-aligned dense pages or no personality. A list of cards, a centred column and a
+calm, generous page can all recede. Use a table when users compare columns. When the product's
+UI is also its showcase (a design system's own app, an open-source project, a portfolio
+product), or the owner is a primary user, owner taste is a primary input. Ask for it rather than
+defaulting to the most utilitarian form.
 
 Different surfaces of one product can take different postures. Keep them coherent through shared
 tokens, voice and component behaviour, not by making every page look the same.

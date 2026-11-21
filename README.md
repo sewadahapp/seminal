@@ -21,6 +21,7 @@ seminal/
 │   ├── interface-classification.md  # Surfaces, five signals, posture
 │   ├── ux-patterns.md               # IA, flows, tables, forms, states, a11y, responsive
 │   ├── visual-direction.md          # Identity levers, density, colour roles, motion budget
+│   ├── layout.md                    # Content column, list vs cards vs table, app shell
 │   ├── existing-projects.md         # Inspecting and respecting existing design systems
 │   ├── validation.md                # Inspection, judgment questions, honest reporting
 │   ├── specialist-integration.md    # Optional routing to Impeccable, Taste, UI UX Pro Max, …

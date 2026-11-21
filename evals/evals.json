@@ -140,6 +140,76 @@
         "Marketing steps forward and shows the real console",
         "Explains coherence through shared tokens, voice and component behaviour"
       ]
+    },
+    {
+      "id": 11,
+      "name": "K-collection-view",
+      "prompt": "(Repo: a Nuxt app built on a component library the owner also maintains. The projects page is a table with columns Name, Status, Parts, Last edited; a typical user has 10-60 projects and opens this page several times a day to open one.) Redesign the projects page of our app. Each project has a name, a status, a part count and a last-edited time. The current table is hard to read. This app is also the showcase for our UI library.",
+      "expected_output": "See evals/scenarios.md section K",
+      "files": [],
+      "expectations": [
+        "Inspects the existing page before proposing a direction",
+        "Shows 2-3 options before writing code, each named after a familiar pattern, including a card-per-row list",
+        "Recommends one option with a reason tied to what users do with the records, not only to posture",
+        "Recognises the showcase context and asks for or uses an owner reference",
+        "Keeps search, sort, empty/loading states and keyboard navigation whichever form is chosen"
+      ]
+    },
+    {
+      "id": 12,
+      "name": "L-vague-feedback",
+      "prompt": "(In the previous turn the agent built this sidebar; no account menu exists yet, account settings live under a 'Settings' nav item: <aside class=\"flex h-full w-60 flex-col border-r\"><div class=\"px-4 py-3\"><AppLogo /></div><nav class=\"flex-1 space-y-0.5 px-2\"><NavItem v-for=\"item in items\" :key=\"item.to\" v-bind=\"item\" class=\"px-2 py-1.5\" /></nav><footer class=\"border-t px-3 py-2 text-xs text-muted\">Powered by Selaras</footer></aside>) The sidebar footer that says 'Powered by Selaras' looks off. Fix it.",
+      "expected_output": "See evals/scenarios.md section L",
+      "files": [],
+      "expectations": [
+        "Measures the footer in the rendered UI before changing anything",
+        "Lists 2-3 concrete hypotheses, including both an alignment defect and a structural/taste explanation",
+        "Fixes measurable defects and says what was fixed",
+        "For the structural question, offers footer options (e.g. account block, promo card) or asks for a reference before rebuilding",
+        "States the evidence level honestly"
+      ]
+    },
+    {
+      "id": 13,
+      "name": "M-reference-midtask",
+      "prompt": "(In the previous turn the agent proposed: Workspace full width with 24px padding, Agents max-w-3xl, Settings max-w-2xl, all left-aligned 'for a consistent left edge'.) [Screenshot of Claude's artifact list: one centred column about 760px wide with equal side margins; title, then a search field and 'New' button on one row sharing the column edges; rows of title + grey subtitle (type · edited time) separated by thin dividers; generous spacing; no table header.] I want our pages to feel like this.",
+      "expected_output": "See evals/scenarios.md section M",
+      "files": [],
+      "expectations": [
+        "Reads the screenshot for composition (centred column, width, shared edges, spacing)",
+        "States what changes from its earlier plan rather than defending it",
+        "Applies the layout rule to every section via a shared layout primitive",
+        "Keeps the product's own brand and behaviour conventions rather than copying the reference's visual identity",
+        "Verifies by measuring column edges across sections"
+      ]
+    },
+    {
+      "id": 14,
+      "name": "N-consistent-margins",
+      "prompt": "(Nuxt repo. layouts/default.vue is a sidebar plus <main class=\"flex-1 overflow-y-auto\">. pages/workspace.vue root <div class=\"p-6\"> (full width, sticky top-0 toolbar, grid of project cards); pages/agents.vue <div class=\"mx-auto max-w-4xl px-8 py-6\">; pages/settings.vue <div class=\"max-w-2xl p-4\">.) Workspace, Agents and Settings all have different margins and widths. Make them consistent.",
+      "expected_output": "See evals/scenarios.md section N",
+      "files": [],
+      "expectations": [
+        "Measures each section's content column before changing anything",
+        "Proposes one rule: named widths and a single alignment (offering options if both centred and left fit)",
+        "Implements it once in a shared layout component or token, not per-page tweaks",
+        "Handles scrollbar gutter and checks header/toolbar/sticky alignment",
+        "Re-measures and reports numbers with an honest evidence level"
+      ]
+    },
+    {
+      "id": 15,
+      "name": "O-no-one-to-ask",
+      "prompt": "(React, Tailwind, shadcn/ui. The home screen shows a 'Recent notes' list, a 'New note' button and a tag cloud.) Redesign the home screen of our open-source note-taking app. Work autonomously; I'm away until tomorrow, so don't wait for me.",
+      "expected_output": "See evals/scenarios.md section O",
+      "files": [],
+      "expectations": [
+        "Does not block on questions; builds a direction",
+        "Notes the showcase nature of an open-source UI",
+        "States the reference and posture it assumed",
+        "Lists the alternative options concretely as follow-ups",
+        "Gives an honest validation report"
+      ]
     }
   ]
 }
